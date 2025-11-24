@@ -15,7 +15,7 @@ const StepThree = () => {
   };
 
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 bg-[#F7F7F7]">
       <h2 className="text-3xl font-bold text-slate-800 mb-2">Backer Information</h2>
       <p className="text-slate-500 mb-8">Add sponsor details and review terms.</p>
 
@@ -23,14 +23,18 @@ const StepThree = () => {
         {/* Backer Toggle */}
         <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
           <label className="flex items-center gap-4 cursor-pointer">
-            <div className={clsx(
-              "w-12 h-6 rounded-full p-1 transition-colors duration-300 ease-in-out",
-              formData.hasBacker ? "bg-blue-500" : "bg-slate-300"
-            )}>
-              <div className={clsx(
-                "w-4 h-4 bg-white rounded-full shadow-sm transform transition-transform duration-300 ease-in-out",
-                formData.hasBacker ? "translate-x-6" : "translate-x-0"
-              )} />
+            <div
+              className={clsx(
+                "w-12 h-6 rounded-full p-1 transition-colors duration-300 ease-in-out",
+                formData.hasBacker ? "bg-blue-500" : "bg-slate-300"
+              )}
+            >
+              <div
+                className={clsx(
+                  "w-4 h-4 bg-white rounded-full shadow-sm transform transition-transform duration-300 ease-in-out",
+                  formData.hasBacker ? "translate-x-6" : "translate-x-0"
+                )}
+              />
             </div>
             <input
               type="checkbox"
@@ -81,10 +85,14 @@ const StepThree = () => {
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Backer Logo <span className="text-red-500">*</span>
               </label>
-              <div className={clsx(
-                "relative border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center text-center transition-colors",
-                errors.backerLogo ? "border-red-300 bg-red-50" : "border-slate-300 hover:border-blue-400 hover:bg-blue-50"
-              )}>
+              <div
+                className={clsx(
+                  "relative border-2 border-dashed rounded-xl p-6 flex flex-col items-center justify-center text-center transition-colors",
+                  errors.backerLogo
+                    ? "border-red-300 bg-red-50"
+                    : "border-slate-300 hover:border-blue-400 hover:bg-blue-50"
+                )}
+              >
                 <Upload className="w-8 h-8 text-slate-400 mb-2" />
                 <p className="text-sm text-slate-600 mb-2">
                   {formData.backerLogo ? (
@@ -120,10 +128,14 @@ const StepThree = () => {
         {/* Terms & Conditions */}
         <div className="pt-6 border-t border-slate-200">
           <label className="flex items-start gap-3 cursor-pointer group">
-            <div className={clsx(
-              "mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors shrink-0",
-              formData.termsAccepted ? "bg-blue-500 border-blue-500" : "bg-white border-slate-300 group-hover:border-blue-400"
-            )}>
+            <div
+              className={clsx(
+                "mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors shrink-0",
+                formData.termsAccepted
+                  ? "bg-blue-500 border-blue-500"
+                  : "bg-white border-slate-300 group-hover:border-blue-400"
+              )}
+            >
               {formData.termsAccepted && <Check className="w-3.5 h-3.5 text-white" />}
             </div>
             <input
@@ -133,7 +145,11 @@ const StepThree = () => {
               className="sr-only"
             />
             <div className="text-sm text-slate-600">
-              I agree to the <a href="#" className="text-blue-600 hover:underline">Terms and Conditions</a> and confirm that all information provided is accurate.
+              I agree to the{" "}
+              <a href="#" className="text-blue-600 hover:underline">
+                Terms and Conditions
+              </a>{" "}
+              and confirm that all information provided is accurate.
             </div>
           </label>
           {errors.termsAccepted && <p className="text-xs text-red-500 mt-2 ml-8">{errors.termsAccepted}</p>}

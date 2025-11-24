@@ -16,7 +16,7 @@ const Wizard = () => {
   const handleSubmit = () => {
     if (validateStep3()) {
       setIsSubmitting(true);
-      
+
       // Construct payload
       const payload = {
         title: formData.bountyTitle,
@@ -60,10 +60,10 @@ const Wizard = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 font-sans text-slate-900">
+    <div className="flex min-h-screen bg-[#F7F7F7] font-sans text-slate-900">
       <Sidebar />
       <div className="flex-1 p-8 lg:p-12 overflow-y-auto">
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 min-h-[600px] flex flex-col">
+        <div className="max-w-3xl border border-gray-300 rounded-2xl shadow-xl p-8 min-h-[600px] flex flex-col">
           <div className="flex-1">
             {currentStep === 1 && <StepOne />}
             {currentStep === 2 && <StepTwo />}
@@ -80,7 +80,7 @@ const Wizard = () => {
                 Back
               </button>
             )}
-            
+
             {currentStep < 3 ? (
               <button
                 onClick={nextStep}

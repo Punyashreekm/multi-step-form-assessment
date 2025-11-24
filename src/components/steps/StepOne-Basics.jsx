@@ -14,7 +14,7 @@ const StepOne = () => {
   ];
 
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500  bg-[#F7F7F7]">
       <h2 className="text-3xl font-bold text-slate-800 mb-2">Basic Details</h2>
       <p className="text-slate-500 mb-8">Let's start with the core information about your bounty.</p>
 
@@ -49,7 +49,9 @@ const StepOne = () => {
             rows={4}
             className={clsx(
               "w-full px-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-blue-500/20 transition-all outline-none resize-none",
-              errors.bountyDescription ? "border-red-300 focus:border-red-500" : "border-slate-200 focus:border-blue-500"
+              errors.bountyDescription
+                ? "border-red-300 focus:border-red-500"
+                : "border-slate-200 focus:border-blue-500"
             )}
             placeholder="Describe what needs to be done..."
           />

@@ -4,10 +4,21 @@ import { Calendar, Clock, DollarSign, Users, Award, ChevronDown, Check } from "l
 import { clsx } from "clsx";
 
 const SDG_OPTIONS = [
-  "No Poverty", "Zero Hunger", "Good Health", "Quality Education", "Gender Equality",
-  "Clean Water", "Affordable Energy", "Decent Work", "Industry & Innovation",
-  "Reduced Inequalities", "Sustainable Cities", "Responsible Consumption",
-  "Climate Action", "Life Below Water", "Life On Land"
+  "No Poverty",
+  "Zero Hunger",
+  "Good Health",
+  "Quality Education",
+  "Gender Equality",
+  "Clean Water",
+  "Affordable Energy",
+  "Decent Work",
+  "Industry & Innovation",
+  "Reduced Inequalities",
+  "Sustainable Cities",
+  "Responsible Consumption",
+  "Climate Action",
+  "Life Below Water",
+  "Life On Land",
 ];
 
 const StepTwo = () => {
@@ -22,7 +33,7 @@ const StepTwo = () => {
   };
 
   return (
-    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 bg-[#F7F7F7]">
       <h2 className="text-3xl font-bold text-slate-800 mb-2">Rewards & Timeline</h2>
       <p className="text-slate-500 mb-8">Define the incentives and schedule for your bounty.</p>
 
@@ -42,8 +53,10 @@ const StepTwo = () => {
                 onChange={(e) => handleFormChange("currency", e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
               >
-                {["USD", "EUR", "INR", "GBP", "AUD", "CAD"].map(c => (
-                  <option key={c} value={c}>{c}</option>
+                {["USD", "EUR", "INR", "GBP", "AUD", "CAD"].map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
                 ))}
               </select>
             </div>
@@ -80,7 +93,9 @@ const StepTwo = () => {
                 onChange={(e) => handleFormChange("numberOfWinners", e.target.value)}
                 className={clsx(
                   "w-full pl-10 pr-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-blue-500/20 transition-all outline-none",
-                  errors.numberOfWinners ? "border-red-300 focus:border-red-500" : "border-slate-200 focus:border-blue-500"
+                  errors.numberOfWinners
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-blue-500"
                 )}
               />
               <Users className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
@@ -107,7 +122,9 @@ const StepTwo = () => {
                 onChange={(e) => handleFormChange("expirationDate", e.target.value)}
                 className={clsx(
                   "w-full pl-10 pr-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-blue-500/20 transition-all outline-none",
-                  errors.expirationDate ? "border-red-300 focus:border-red-500" : "border-slate-200 focus:border-blue-500"
+                  errors.expirationDate
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-blue-500"
                 )}
               />
               <Calendar className="absolute left-3 top-3 w-4 h-4 text-slate-400 pointer-events-none" />
@@ -144,10 +161,12 @@ const StepTwo = () => {
 
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
             <label className="flex items-center gap-3 cursor-pointer">
-              <div className={clsx(
-                "w-6 h-6 rounded border flex items-center justify-center transition-colors",
-                formData.hasImpactCertificate ? "bg-blue-500 border-blue-500" : "bg-white border-slate-300"
-              )}>
+              <div
+                className={clsx(
+                  "w-6 h-6 rounded border flex items-center justify-center transition-colors",
+                  formData.hasImpactCertificate ? "bg-blue-500 border-blue-500" : "bg-white border-slate-300"
+                )}
+              >
                 {formData.hasImpactCertificate && <Check className="w-4 h-4 text-white" />}
               </div>
               <input
@@ -177,7 +196,9 @@ const StepTwo = () => {
                   onChange={(e) => handleFormChange("impactBrief", e.target.value)}
                   className={clsx(
                     "w-full px-4 py-2.5 rounded-lg border bg-white focus:ring-2 focus:ring-blue-500/20 transition-all outline-none",
-                    errors.impactBrief ? "border-red-300 focus:border-red-500" : "border-slate-200 focus:border-blue-500"
+                    errors.impactBrief
+                      ? "border-red-300 focus:border-red-500"
+                      : "border-slate-200 focus:border-blue-500"
                   )}
                   placeholder="Briefly describe the impact..."
                 />
@@ -187,7 +208,9 @@ const StepTwo = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Sustainable Development Goals (SDGs)</label>
+            <label className="block text-sm font-medium text-slate-700 mb-1">
+              Sustainable Development Goals (SDGs)
+            </label>
             <div className="relative">
               <button
                 type="button"
@@ -203,11 +226,16 @@ const StepTwo = () => {
               {sdgOpen && (
                 <div className="absolute z-20 mt-2 w-full max-h-60 overflow-auto rounded-xl border border-slate-200 bg-white shadow-xl p-2">
                   {SDG_OPTIONS.map((opt) => (
-                    <label key={opt} className="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors">
-                      <div className={clsx(
-                        "w-5 h-5 rounded border flex items-center justify-center transition-colors",
-                        formData.sdgs?.includes(opt) ? "bg-blue-500 border-blue-500" : "bg-white border-slate-300"
-                      )}>
+                    <label
+                      key={opt}
+                      className="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors"
+                    >
+                      <div
+                        className={clsx(
+                          "w-5 h-5 rounded border flex items-center justify-center transition-colors",
+                          formData.sdgs?.includes(opt) ? "bg-blue-500 border-blue-500" : "bg-white border-slate-300"
+                        )}
+                      >
                         {formData.sdgs?.includes(opt) && <Check className="w-3 h-3 text-white" />}
                       </div>
                       <input
@@ -224,8 +252,11 @@ const StepTwo = () => {
             </div>
             {formData.sdgs?.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-3">
-                {formData.sdgs.map(sdg => (
-                  <span key={sdg} className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100">
+                {formData.sdgs.map((sdg) => (
+                  <span
+                    key={sdg}
+                    className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+                  >
                     {sdg}
                   </span>
                 ))}

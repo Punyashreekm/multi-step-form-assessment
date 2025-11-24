@@ -27,7 +27,7 @@ Includes the React Context and Provider that manage global form data, ensuring a
 
 Holds helper functions such as validation.js, which provides step-wise input validation and reusable logic for form checks.
 
-App.jsx (acts like pages)
+App.jsx
 
 Serves as the main routing/flow controller for the application, switching between Step One, Step Two, Step Three, Confirmation, and Result pages.
 

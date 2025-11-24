@@ -7,7 +7,6 @@ This project is a multi-step form application built with React. It utilizes Reac
 - Multi-step form with navigation
 - Form data persistence across steps
 - Validation for each step
-- Responsive design
 
 🌐 Live Demo
 

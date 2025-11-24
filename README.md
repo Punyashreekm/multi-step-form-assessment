@@ -9,32 +9,28 @@ This project is a multi-step form application built with React. It utilizes Reac
 - Validation for each step
 - Responsive design
 
+🌐 Live Demo
+
+You can preview the deployed version here: https://bounty-creation-form.netlify.app/
+
 ## Project Structure
 
-```
-multi-step-form
-├── src
-│   ├── App.jsx
-│   ├── components
-│   │   ├── Sidebar.jsx
-│   │   └── steps
-│   │       ├── StepOne-Basics.jsx
-│   │       ├── StepTwo-Rewards.jsx
-│   │       └── StepThree-Backer.jsx
-│   ├── context
-│   │   ├── FormContext.jsx
-│   │   └── FormProvider.jsx
-│   ├── hooks
-│   │   └── useForm.js
-│   ├── utils
-│   │   └── validation.js
-│   ├── index.css
-│   └── main.jsx
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── README.md
-```
+/components
+
+Contains all UI components used in the form flow, including the Sidebar, Confirmation screen, Result screen, and individual step components under /steps.
+
+/context
+
+Includes the React Context and Provider that manage global form data, ensuring all step inputs persist across navigation.
+
+/utils
+
+Holds helper functions such as validation.js, which provides step-wise input validation and reusable logic for form checks.
+
+App.jsx (acts like pages)
+
+Serves as the main routing/flow controller for the application, switching between Step One, Step Two, Step Three, Confirmation, and Result pages.
+
 
 ## Installation
 
@@ -59,11 +55,3 @@ npm run dev
 ```
 
 Open your browser and go to `http://localhost:3000` to view the application.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.

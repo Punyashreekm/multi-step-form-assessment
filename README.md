@@ -1,6 +1,6 @@
 # Multi-Step Form Application
 
-This project is a multi-step form application built with React. It utilizes React Context for state management to ensure that form data persists across multiple steps. The application is designed to be user-friendly and responsive, leveraging Tailwind CSS for styling.
+This project is a bounty creation multi-step form application built with React. It utilizes React Context for state management to ensure that form data persists across multiple steps. The application is designed leveraging Tailwind CSS for styling.
 
 ## Features
 
